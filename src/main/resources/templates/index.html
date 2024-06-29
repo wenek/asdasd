@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Holidays</title>
+    <link rel="stylesheet" th:href="@{/styles/index.css}">
+    <link rel="stylesheet" th:href="@{/styles/default.css}">
+    <link rel="stylesheet" th:href="@{/styles/navbar.css}">
 </head>
+
 <body>
+    <nav>
+        <a id="logo" href="/">Calendar</a>
+        <div class="nav-links" sec:authorize="!isAuthenticated()">
+            <a class="link" href="/login">Login</a>
+            <a class="link" href="/register">Register</a>
+        </div>
+        <div class="nav-links" sec:authorize="isAuthenticated()">
+            <a class="link" href="/login?logout">Logout</a>
+        </div>
+    </nav>
 
+    <main id="main">
+        <h1 id="header">Holidays</h1>
 
+        <form id="holiday-form" action="/" method="get">
+            <div id="inputs-wrapper">
+                <input name="dayFrom" placeholder="Day from" type="number" class="input" min="1" max="31">
+                <input name="dayTo" placeholder="Day to" type="number" class="input" min="1" max="31">
+                <input name="monthFrom" placeholder="Month from" type="number" class="input" min="1" max="12">
+                <input name="monthTo" placeholder="Month to" type="number" class="input" min="1" max="12">
+            </div>
+            <div id="buttons-wrapper">
+                <button id="search-button" class="button" type="submit">Search</button>
+                <button id="saved-holidays-button" class="button" sec:authorize="isAuthenticated()" type="button" onclick="window.location.href='/saved'">Saved</button>
+            </div>
+        </form>
+
+        <div id="holidays-list">
+            <div th:if="${#lists.isEmpty(holidays)}">
+                <p id="empty-result-message">No holidays found.</p>
+            </div>
+            <div th:unless="${#lists.isEmpty(holidays)}" th:each="holiday : ${holidays}">
+                <p class="holiday-item" th:text="${holiday.name} + ' (' + ${holiday.month} + '/' + ${holiday.day} + ')'"></p>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

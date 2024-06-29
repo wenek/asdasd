@@ -1,0 +1,71 @@
+:root {
+    --background-color: #161422;
+    --secondary-color: #ff9d01;
+    --text-color: whitesmoke;
+    --nav-height: 60px;
+}
+
+@font-face {
+    src: url('../fonts/main-font.ttf');
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, a, p, label, input, button {
+    margin: 0;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    background-color: var(--background-color);
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    width: 90%;
+    margin: calc(var(--nav-height) + 20px) auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: var(--text-color);
+}
+
+::-ms-input-placeholder {
+    color: var(--text-color);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+button {
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}

@@ -1,6 +1,7 @@
 package project.calendar.general.validation;
 
 import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.PARAMETER;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import java.lang.annotation.Retention;
@@ -16,7 +17,7 @@ import jakarta.validation.constraints.Min;
 @Max(31)
 @ReportAsSingleViolation
 @Constraint(validatedBy = {})
-@Target(FIELD)
+@Target(PARAMETER)
 @Retention(RUNTIME)
 public @interface Day {
 

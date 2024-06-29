@@ -1,4 +1,4 @@
-package project.calendar.holiday;
+package project.calendar.home;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import project.calendar.dto.Holiday;
 
 @Repository
-public interface HolidayRepository extends JpaRepository<HolidayEntity, Long> {
+public interface HomeRepository extends JpaRepository<HolidayEntity, Long> {
 
     @Query("""
             SELECT new project.calendar.dto.Holiday(h.id, h.name, h.monthValue, h.dayValue)

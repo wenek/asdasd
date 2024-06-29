@@ -1,6 +1,6 @@
 package project.calendar.user;
 
-import static project.calendar.holiday.HolidayMapper.toIDs;
+import static project.calendar.home.HolidayMapper.toIDs;
 import static project.calendar.user.UserMapper.toEntity;
 import static project.calendar.user.UserMapper.toUserDetails;
 
@@ -19,15 +19,15 @@ import project.calendar.dto.Holiday;
 import project.calendar.dto.PasswordChange;
 import project.calendar.dto.Registration;
 import project.calendar.dto.UserCredentials;
-import project.calendar.holiday.HolidayEntity;
-import project.calendar.holiday.HolidayRepository;
+import project.calendar.home.HolidayEntity;
+import project.calendar.home.HomeRepository;
 
 @Service
 @RequiredArgsConstructor
 public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
-    private final HolidayRepository holidayRepository;
+    private final HomeRepository holidayRepository;
     private final PasswordEncoder encoder;
 
     @Transactional

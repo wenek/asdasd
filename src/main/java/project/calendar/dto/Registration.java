@@ -1,14 +1,26 @@
 package project.calendar.dto;
 
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import project.calendar.general.validation.Email;
 import project.calendar.general.validation.Equals;
-import project.calendar.general.validation.Password;
+import project.calendar.general.validation.ReqPassword;
 
 @Equals(
         first = "password",
-        second = "passwordConfirmation")
+        second = "passwordConfirmation",
+        message = "Password and password confirmation contain different values")
 public record Registration(
-        @NotNull @Email String email,
-        @NotNull @Password String password,
-        @NotNull @Password String passwordConfirmation) {}
+        @NotEmpty(message = "E-mail cannot be empty")
+        @Email(message = "The provided e-mail is invalid")
+        String email,
+        @ReqPassword
+        String password,
+        @NotBlank(message = "Password confirmation cannot be empty")
+        String passwordConfirmation) {
+
+    public static Registration empty() {
+        return new Registration(null, null, null);
+    }
+
+}

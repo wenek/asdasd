@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" th:href="@{/styles/default.css}">
+    <link rel="stylesheet" th:href="@{/styles/registration.css}">
+</head>
+
+<body>
+<h1 id="header">Registration</h1>
+<form id="registration-form" th:action="@{/register}" th:object="${registration}" method="post">
+    <div class="input-wrapper">
+        <label for="email">Email:</label>
+        <input class="input" type="email" id="email" th:field="*{email}" />
+    </div>
+    <div class="input-wrapper">
+        <label for="password">Password:</label>
+        <input class="input" type="password" id="password" th:field="*{password}" />
+    </div>
+    <div class="input-wrapper">
+        <label for="passwordConfirmation">Confirm Password:</label>
+        <input class="input" type="password" id="passwordConfirmation" th:field="*{passwordConfirmation}" />
+    </div>
+
+    <button id="submit-button" type="submit">Register</button>
+
+    <div th:if="${#fields.hasAnyErrors()}">
+        <p class="error-message" th:each="err : ${#fields.allErrors()}" th:text="${err}"></p>
+    </div>
+</form>
+</body>
+
+</html>

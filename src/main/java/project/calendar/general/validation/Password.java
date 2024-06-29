@@ -1,5 +1,6 @@
 package project.calendar.general.validation;
 
+import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -14,7 +15,7 @@ import jakarta.validation.constraints.Pattern;
 @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$")
 @ReportAsSingleViolation
 @Constraint(validatedBy = {})
-@Target(FIELD)
+@Target({FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
 public @interface Password {
 

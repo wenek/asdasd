@@ -1,4 +1,4 @@
-package project.calendar.holiday;
+package project.calendar.home;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 

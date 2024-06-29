@@ -18,7 +18,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import project.calendar.general.validation.Password;
-import project.calendar.holiday.HolidayEntity;
+import project.calendar.home.HolidayEntity;
 
 @Entity
 @Table(name = "users")

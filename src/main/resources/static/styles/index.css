@@ -1,0 +1,87 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+#header {
+    text-align: center;
+    font-size: 35px;
+}
+
+#holiday-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+#inputs-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    width: 20%;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: var(--text-color) 2px solid;
+}
+
+#buttons-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#search-button {
+    background-color: var(--secondary-color);
+}
+
+#saved-holidays-button {
+    background-color: transparent;
+}
+
+.button {
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 2px var(--secondary-color) solid;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 25%;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    transition: 0.5s ease-out;
+}
+
+#holidays-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.holiday-item {
+    border-bottom: 1px solid var(--text-color);
+    padding: 10px 15px;
+}
+
+#empty-result-message {
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .button {
+        width: 50%;
+    }
+}

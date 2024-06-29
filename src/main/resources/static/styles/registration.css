@@ -1,0 +1,66 @@
+#header {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+#registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+}
+
+.input {
+    color: black;
+    width: 350px;
+    height: 35px;
+}
+
+#submit-button {
+    font-size: 16px;
+    height: 40px;
+    width: 350px;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+    border: 2px solid transparent;
+}
+
+#submit-button:hover {
+    border: 2px solid var(--secondary-color);
+    transition: 0.5s ease-out;
+}
+
+.error-message {
+    color: darkred;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    #registration-form {
+        width: 90%;
+    }
+
+    .input-wrapper {
+        width: 100%;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    #submit-button {
+        width: 100%;
+    }
+}

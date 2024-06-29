@@ -1,4 +1,4 @@
-package project.calendar.holiday;
+package project.calendar.home;
 
 import java.util.Set;
 
@@ -10,9 +10,9 @@ import project.calendar.dto.HolidaysSearch;
 
 @Service
 @RequiredArgsConstructor
-public class HolidayService {
+public class HomeService {
 
-    private final HolidayRepository holidayRepository;
+    private final HomeRepository holidayRepository;
 
     public Set<Holiday> find(HolidaysSearch params) {
         return holidayRepository.find(
